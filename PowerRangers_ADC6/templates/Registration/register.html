@@ -74,16 +74,16 @@ body{
         	{% csrf_token %}
             <h1 class="mb-5 font-weight-light text-uppercase">Sign up</h1>
             <div class="form-group">
-                <input type="text" class="form-control rounded-pill form-control-lg" placeholder="Enter Username">
+                <input type="text" name="input_username" class="form-control rounded-pill form-control-lg" placeholder="Enter Username">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Enter Email">
+                <input type="email" name="input_email" class="form-control rounded-pill form-control-lg" placeholder="Enter Email">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Enter Password">
+                <input type="password" name="input_password1" class="form-control rounded-pill form-control-lg" placeholder="Enter Password">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control rounded-pill form-control-lg" placeholder="Confirm Password">
+                <input type="password" name="input_password2" class="form-control rounded-pill form-control-lg" placeholder="Confirm Password">
             </div>
 
 
