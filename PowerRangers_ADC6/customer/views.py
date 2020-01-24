@@ -61,7 +61,7 @@ def booking_update_save(request, ID):
     book_object.roomno = request.POST['RoomNo']
     book_object.cemail = request.POST['CustomerEmail']
     book_object.ccontact = request.POST['CustomerContact']
-    book_object.save();
+    book_object.save()
 
     return HttpResponse("Record Updated!!")
 
@@ -137,3 +137,7 @@ def authenticate_user(request):
         else:
             messages.info(request,'invalid username or password')
             return render(request,'Registration/login.html')
+
+def logout(request):
+    auth.logout(request)
+    return render(request,'index.html')

@@ -14,7 +14,8 @@ urlpatterns =[
     path('search/searchlist',views.searchresults),
     path('upload/',views.upload),
     path('signup/',views.register_user,name="signup"),
-    path('login/',views.authenticate_user, name="login")
+    path('login/',views.authenticate_user, name="login"),
+    path('logout/',views.logout, name="logout")
     
    
 ]
