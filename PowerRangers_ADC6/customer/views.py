@@ -7,11 +7,12 @@ from django.views.generic import TemplateView
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
 
+def index(request):
+    return render(request, template_name="index.html")
 
 def view_Booking_lists(request):
     list_of_Booking= BookRoom.objects.all()
