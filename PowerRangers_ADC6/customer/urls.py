@@ -3,6 +3,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns =[
+    path('', views.index, name="index"),
     path('booking/',views.view_Booking_lists),
     path('bookingform/',views.booking_form),
     path('bookingform/save',views.booking_save),
@@ -12,8 +13,9 @@ urlpatterns =[
     path('search/',views.search),
     path('search/searchlist',views.searchresults),
     path('upload/',views.upload),
-    path('signup/',views.register_user),
-    path('login/',views.authenticate_user)
+    path('signup/',views.register_user,name="signup"),
+    path('login/',views.authenticate_user, name="login"),
+    path('logout/',views.logout, name="logout")
     
    
 ]
