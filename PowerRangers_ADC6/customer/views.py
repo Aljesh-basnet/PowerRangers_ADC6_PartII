@@ -11,6 +11,8 @@ from django.core.files.storage import FileSystemStorage
 from .models import *
 
 
+def view_hello_world(request):
+    
 def index(request):
     return render(request, template_name="index.html")
 
