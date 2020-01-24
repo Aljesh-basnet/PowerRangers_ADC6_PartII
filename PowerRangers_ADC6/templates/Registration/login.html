@@ -87,6 +87,9 @@ body{
 
         <form class="login-form text-center" method="POST">
           {% csrf_token %}
+          <ul>{% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}</ul>
             <h1 class="mb-5 font-weight-light text-uppercase">Login</h1>
                 <div class="form-group">
                      <input type="text" name="input_username" class="form-control rounded-pill form-control-lg" placeholder="Username">
@@ -99,10 +102,6 @@ body{
         </form>
     </div>
 
-    <div>
-        {% for message in messages %}
-        <h3>{{message}}</h3>
-        {% endfor %}
-    </div> 
+    
 </body>
 </html>
