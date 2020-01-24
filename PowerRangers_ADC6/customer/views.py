@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
-from .models import BookRoom
 from django.db.models import Q
 from django.views.generic import TemplateView
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import User,auth
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-
+from django.core.files.storage import FileSystemStorage
+from .models import *
 
 
 def index(request):
@@ -85,13 +85,33 @@ def searchresults(request):
     Context = {'result': result}
     return render(request, 'Bookings/searchlist.html', Context)
 
-
-def upload(request):
-    if request.method == 'POST':
-        uploaded_file = request.FILES['document']
-        file_object = FileSystemStorage()
-        file_object.save(uploaded_file.name, uploaded_file)
+def upload_view(request):
+    
     return render(request, 'Bookings/uploadfile.html')
+
+def upload_destination(request):
+    if request.method == 'POST'and request.FILES['image']:
+        get_image = request.FILES['image']
+        fileSystemStorage = FileSystemStorage()
+        filename = fileSystemStorage.save(get_image.name, get_image)
+        url = fileSystemStorage.url(filename)
+
+        get_destination_name = request.POST['name']
+        get_destination_description = request.POST['description']
+
+        destination_obj = Destination(destination_image=url,destination_name=get_destination_name,destination_description=get_destination_description)
+        destination_obj.save()
+        return redirect('/')
+    else:
+        return HttpResponse("Error")
+
+# def upload(request):
+    
+#     if request.method == 'POST':
+#          uploaded_file = request.FILES['document']
+#          file_object = FileSystemStorage()
+#          file_object.save(uploaded_file.name, uploaded_file)
+#     return render(request, 'Bookings/uploadfile.html')
 
 
 def register_user(request):

@@ -17,9 +17,11 @@
 			<li><a href="/logout">Logout</a></li>
             <li><a href="/booking">List</a></li>
             <li><a href="/search">Search</a></li>
-		<form method="post" enctype="multipart/form-data">
+		<form method="post" action="{% url 'uploadimage' %}" enctype="multipart/form-data">
 			 {% csrf_token %}
-			 <input type="file" name="document">
+			 	<input class="btn" type="file" name="image"><br>
+				 <input type="text" name="name" placeholder="name"><br>
+				 <input type="text" name="description" placeholder="description"><br>
 			 <button type="submit" class="p1">Upload</button>
 
 		</form>

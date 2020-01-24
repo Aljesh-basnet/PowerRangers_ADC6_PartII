@@ -12,7 +12,8 @@ urlpatterns =[
     path('booking/delete/<int:ID>', views.delete_book),
     path('search/',views.search),
     path('search/searchlist',views.searchresults),
-    path('upload/',views.upload),
+    path('uploadview/',views.upload_view,name="upload_view"),
+    path('upload/upload/',views.upload_destination,name="uploadimage"),
     path('signup/',views.register_user,name="signup"),
     path('login/',views.authenticate_user, name="login"),
     path('logout/',views.logout, name="logout")
