@@ -100,7 +100,7 @@ def upload_hotel(request):
         get_hotel_name = request.POST['name']
         get_hotel_description = request.POST['description']
 
-        hotel_obj = Hotel(hotel_image=url,hotel_name=get_hotel_name,hotel_description=get_hotel_description)
+        hotel_obj = Hotel_Image(hotel_image=url,hotel_name=get_hotel_name,hotel_description=get_hotel_description)
         hotel_obj.save()
         return redirect('/')
     else:
