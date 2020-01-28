@@ -15,7 +15,7 @@ class BookRoom(models.Model):
 
 
 
-class Destination(models.Model):
-    destination_image = models.URLField()
-    destination_name = models.CharField(max_length=50)
-    destination_description = models.CharField(max_length=70)
+class Hotel_Image(models.Model):
+    hotel_image = models.URLField()
+    hotel_name = models.CharField(max_length=50)
+    hotel_description = models.CharField(max_length=70)

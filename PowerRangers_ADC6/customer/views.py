@@ -90,18 +90,18 @@ def upload_view(request):
     
     return render(request, 'Bookings/uploadfile.html')
 
-def upload_destination(request):
+def upload_hotel(request):
     if request.method == 'POST'and request.FILES['image']:
         get_image = request.FILES['image']
-        fileSystemStorage = FileSystemStorage()
-        filename = fileSystemStorage.save(get_image.name, get_image)
-        url = fileSystemStorage.url(filename)
+        fs = FileSystemStorage()
+        filename = fs.save(get_image.name, get_image)
+        url = fs.url(filename)
 
-        get_destination_name = request.POST['name']
-        get_destination_description = request.POST['description']
+        get_hotel_name = request.POST['name']
+        get_hotel_description = request.POST['description']
 
-        destination_obj = Destination(destination_image=url,destination_name=get_destination_name,destination_description=get_destination_description)
-        destination_obj.save()
+        hotel_obj = Hotel(hotel_image=url,hotel_name=get_hotel_name,hotel_description=get_hotel_description)
+        hotel_obj.save()
         return redirect('/')
     else:
         return HttpResponse("Error")
