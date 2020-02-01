@@ -41,6 +41,7 @@ def booking_save(request):
         return HttpResponse("Record saved")
     else:
         return HttpResponse("Error record saving")
+        
 
 def booking_update_forms(request, ID):
 
