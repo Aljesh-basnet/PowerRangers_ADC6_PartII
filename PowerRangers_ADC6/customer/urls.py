@@ -5,7 +5,7 @@ from . import views
 urlpatterns =[
     path('', views.index, name="index"),
     path('booking/',views.view_Booking_lists),
-    path('bookingform/',views.booking_form),
+    path('bookingform/',views.booking_form, name="fillform"),
     path('bookingform/save',views.booking_save),
     path('booking/update/<int:ID>',views.booking_update_forms),
     path('booking/update/update/<int:ID>',views.booking_update_save),
