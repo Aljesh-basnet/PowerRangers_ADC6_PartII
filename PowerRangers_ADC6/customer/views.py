@@ -155,7 +155,7 @@ def authenticate_user(request):
         user= authenticate(username=request.POST['input_username'],password=request.POST['input_password'])
         if user is not None:
             login(request,user)
-            return render(request,'header.html')
+            return render(request,'Bookings/bookingform.html')
         else:
             messages.info(request,'invalid username or password')
             return render(request,'Registration/login.html')

@@ -23,7 +23,6 @@
         {% if user.is_authenticated %}
         <li>Hello, {{user.first_name}}</li>
         <li><a href="{% url 'logout' %}">logout</a></li>
-        <li><a href="{% url 'Bookingform' %}">Fill form</a></li>
 
         {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
