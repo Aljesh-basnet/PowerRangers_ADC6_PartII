@@ -35,7 +35,6 @@ class Hotels(models.Model):
     Name = models.CharField(max_length  = 255)
     Address = models.CharField(max_length  = 255)
     City = models.CharField(max_length  = 255)
-    Country = models.CharField(max_length  = 255)
     TelephoneNumber = models.CharField(max_length=12)
     ImagePath = models.CharField(max_length  = 255)
     created_at = models.DateTimeField(auto_now_add=True)
