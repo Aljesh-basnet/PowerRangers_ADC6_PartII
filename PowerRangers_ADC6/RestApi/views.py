@@ -49,7 +49,17 @@ def rangerUpDe(request,Id):
             return JsonResponse({"message":"Updated"})
 
 
+@csrf_exempt
+def pagination(req,pageNo,items):
+    start=(pageNo-1)*items
+    end=start+items
 
+    if req.method=="GET":
+        db_ranger=ranger.objects.all()
+        all_ranger=list(db_ranger.values())
+        return JsonResponse({
+            "rangers":all_ranger[start:end]
+        })
 
 
     

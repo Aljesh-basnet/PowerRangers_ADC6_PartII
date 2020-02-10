@@ -78,6 +78,7 @@ def delete_book(request, ID):
     # return redirect('index')
     return HttpResponse("Record Deleted!!")
 
+
 def search(request):
     return render(request, 'Bookings/search.html')
 
